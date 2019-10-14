@@ -1,6 +1,7 @@
 <template>
   <v-container class="my-2">
     <v-card
+      v-bind:class="{ 'orange white--text': dataItem.amount < 10 }"
       flat
       :ripple="false"
       class="px-3 text-left"
@@ -17,6 +18,7 @@
           <div>
             {{dataItem.amount}} &nbsp; &nbsp; &nbsp;
             <span v-show="dataItem.amount === 0">UIT STOCK!</span>
+            <span v-show="dataItem.amount < 10">DRINGEND BIJ BESTELLEN!</span>
           </div>
         </v-flex>
       </v-layout>
